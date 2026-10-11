@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>利特酒店 · 内部文档</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>特</text></svg>">
+</head>
+<body class="doc-page">
+  <main class="docs">
+    <header class="docs-head">
+      <p class="eyebrow">Confidential · 内部系统</p>
+      <h1>利特酒店 · 内部文档</h1>
+      <p class="doc-no">仅限授权人员访问 · 最后登录：未知</p>
+    </header>
+
+    <ul class="docs-list" id="docsList">
+      <li><button class="doc-item" type="button"><span class="doc-item-name">客房入住记录_2025</span><span class="doc-item-ext">.xlsx</span></button></li>
+      <li><button class="doc-item" type="button"><span class="doc-item-name">月度经营报告_2026</span><span class="doc-item-ext">.pdf</span></button></li>
+      <li><button class="doc-item" type="button"><span class="doc-item-name">住客名单（加密）</span><span class="doc-item-ext">.doc</span></button></li>
+      <li><button class="doc-item" type="button"><span class="doc-item-name">房态表</span><span class="doc-item-ext">.xlsx</span></button></li>
+      <li><button class="doc-item" type="button"><span class="doc-item-name">员工排班表</span><span class="doc-item-ext">.xlsx</span></button></li>
+      <li><button class="doc-item" type="button"><span class="doc-item-name">温泉维护日志</span><span class="doc-item-ext">.pdf</span></button></li>
+      <li><button class="doc-item" type="button"><span class="doc-item-name">采购清单</span><span class="doc-item-ext">.doc</span></button></li>
+      <li><button class="doc-item" type="button"><span class="doc-item-name">监控值班记录</span><span class="doc-item-ext">.docx</span></button></li>
+    </ul>
+
+    <footer class="docs-foot">
+      <a class="btn btn-dark" href="index.html">退出系统</a>
+    </footer>
+  </main>
+
+  <div class="modal-overlay" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <p class="modal-icon" aria-hidden="true">⚠</p>
+      <h2 id="modalTitle">文档已损坏</h2>
+      <p class="modal-text">该文档无法打开。是否下载保留的旧版本？</p>
+      <div class="modal-actions">
+        <button class="btn btn-dark" id="modalNo" type="button">否</button>
+        <button class="btn btn-gold" id="modalYes" type="button">是</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll(".doc-item");
+    const modal = document.getElementById("modal");
+    const modalNo = document.getElementById("modalNo");
+    const modalYes = document.getElementById("modalYes");
+
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        modal.hidden = false;
+      });
+    });
+
+    modalNo.addEventListener("click", () => {
+      modal.hidden = true;
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) modal.hidden = true;
+    });
+
+    modalYes.addEventListener("click", () => {
+      const link = document.createElement("a");
+      link.href = "assets/old-archive.zip";
+      link.download = "old-archive.zip";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      modal.hidden = true;
+    });
+  </script>
+</body>
+</html>
