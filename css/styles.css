@@ -41,6 +41,14 @@ body.menu-open {
   display: none;
 }
 
+.era-bar {
+  display: none;
+}
+
+.era-morse {
+  display: none;
+}
+
 img {
   max-width: 100%;
   display: block;

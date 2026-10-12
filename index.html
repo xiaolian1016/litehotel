@@ -3,16 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if (new Date().getFullYear() === 2012) document.documentElement.className = "era-2012";
+  </script>
   <title>利特酒店 · 青岚山</title>
   <meta name="description" content="利特酒店隐于浙江省青岚山南麓竹海。三十六间客房，一处温泉，一座山中厨房。听见风过竹叶，也听见自己。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/era-2012.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>特</text></svg>">
 </head>
 <body>
   <div class="cursor" aria-hidden="true"></div>
+  <div class="era-bar" aria-hidden="true">
+    欢迎光临利特酒店官方网站！　今天是 <span id="eraDate"></span>
+    　｜　建议使用 IE8 及以上浏览器浏览，最佳分辨率 1024×768
+  </div>
+  <div class="page-wrap">
 
   <header class="site-header" id="header">
     <a class="logo" href="#top">
@@ -321,9 +330,11 @@
       <p>利特酒店<br><small>LITTE · QINGLAN</small></p>
     </div>
     <p class="footer-quote">「把行李放下，把时间也放下。」</p>
-    <p class="footer-copy">© 2026 利特酒店 · 仅供展示的介绍页面</p>
+    <p class="footer-copy">© <span id="copyYear">2026</span> 利特酒店 · 仅供展示的介绍页面</p>
+    <p class="era-morse" id="eraMorse" hidden>.---- ----- ....- ..... -....</p>
   </footer>
 
+  </div>
   <script src="js/main.js"></script>
 </body>
 </html>

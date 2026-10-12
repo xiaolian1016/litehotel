@@ -1,0 +1,719 @@
+/* 仅在系统年份为 2012 时生效 */
+html.era-2012 {
+  --ink: #222;
+  --ink-soft: #444;
+  --cream: #f4efe4;
+  --paper: #d9cbb0;
+  --gold: #c9a227;
+  --gold-deep: #8b6914;
+  --line: #c4b089;
+  --serif: "SimSun", "Songti SC", "Noto Serif SC", serif;
+  --sans: "Microsoft YaHei", "SimHei", "Noto Sans SC", sans-serif;
+  --latin: "Times New Roman", "Georgia", serif;
+  --ease: ease;
+  background: #2a2418 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect fill='%232a2418' width='40' height='40'/%3E%3Cpath d='M0 20h40M20 0v40' stroke='%23362e1e' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+html.era-2012 body {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #333;
+  background: transparent;
+}
+
+html.era-2012 .era-bar {
+  display: block;
+  background: #1a140c;
+  color: #d4c4a0;
+  font-size: 12px;
+  text-align: center;
+  padding: 6px 12px;
+  border-bottom: 2px solid #c9a227;
+  letter-spacing: 0;
+}
+
+html.era-2012 .page-wrap {
+  width: 960px;
+  margin: 12px auto 24px;
+  background: #f7f1e4;
+  border: 1px solid #8b6914;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- 顶栏：不再固定 ---------- */
+html.era-2012 .site-header {
+  position: static;
+  display: block;
+  padding: 0;
+  color: #fff;
+  background: linear-gradient(to bottom, #5a3d1a 0%, #3a2410 100%);
+  border-bottom: 3px solid #c9a227;
+}
+
+html.era-2012 .site-header.scrolled,
+html.era-2012 .site-header.open {
+  background: linear-gradient(to bottom, #5a3d1a 0%, #3a2410 100%);
+  backdrop-filter: none;
+}
+
+html.era-2012 .logo {
+  display: block;
+  padding: 14px 18px 10px;
+  color: #f7e7b0;
+}
+
+html.era-2012 .logo-mark {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  vertical-align: middle;
+  border: 2px solid #c9a227;
+  background: #2a1808;
+  color: #c9a227;
+  font-size: 22px;
+  line-height: 38px;
+  text-align: center;
+}
+
+html.era-2012 .logo-text {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-family: "SimHei", "Microsoft YaHei", sans-serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: #f7e7b0;
+}
+
+html.era-2012 .nav {
+  display: block;
+  background: linear-gradient(to bottom, #8b6914 0%, #6a4e0e 50%, #5a3d08 100%);
+  border-top: 1px solid #d4b84a;
+  padding: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+html.era-2012 .nav a {
+  display: inline-block;
+  color: #fff8dc;
+  padding: 10px 18px;
+  border-right: 1px solid #5a3d08;
+  border-left: 1px solid #c9a227;
+  text-decoration: none;
+}
+
+html.era-2012 .nav a:hover {
+  background: linear-gradient(to bottom, #c9a227, #8b6914);
+  color: #2a1808;
+}
+
+html.era-2012 .nav-cta {
+  border: 0;
+  padding: 10px 18px;
+  background: linear-gradient(to bottom, #d4b84a, #8b6914);
+  color: #2a1808;
+  font-weight: 700;
+}
+
+html.era-2012 .menu-toggle {
+  display: none !important;
+}
+
+html.era-2012 .nav .puzzle-badge,
+html.era-2012 .nav.puzzle-active .puzzle-badge {
+  display: none !important;
+}
+
+/* ---------- 首页横幅：一张小图 + 文字，不再全屏摄影 ---------- */
+html.era-2012 .hero {
+  position: relative;
+  min-height: 0;
+  height: auto;
+  padding: 18px 20px 16px;
+  color: #5a3d1a;
+  display: block;
+  background: #fffdf6;
+  border-bottom: 1px dashed #c4b089;
+}
+
+html.era-2012 .hero-media {
+  position: static;
+  float: right;
+  width: 220px;
+  height: 140px;
+  margin: 0 0 8px 18px;
+  border: 4px solid #fff;
+  outline: 1px solid #c4b089;
+  overflow: hidden;
+}
+
+html.era-2012 .hero-media img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+html.era-2012 .hero-veil {
+  display: none;
+}
+
+html.era-2012 .hero-side,
+html.era-2012 .scroll-hint {
+  display: none;
+}
+
+html.era-2012 .hero-copy {
+  position: relative;
+  z-index: 1;
+  padding: 8px 0 0;
+  max-width: none;
+  overflow: hidden;
+}
+
+html.era-2012 .hero h1 {
+  font-family: "SimHei", "Microsoft YaHei", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+  text-shadow: none;
+  line-height: 1.4;
+  color: #5a3d1a;
+}
+
+html.era-2012 .hero-lead {
+  font-size: 13px;
+  max-width: none;
+  margin-bottom: 16px;
+  color: #444;
+}
+
+html.era-2012 .eyebrow {
+  font-family: var(--sans);
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: #c9a227;
+  margin-bottom: 6px;
+}
+
+html.era-2012 .num {
+  display: inline-block;
+  font-family: var(--sans);
+  letter-spacing: 0;
+  color: #8b6914;
+  margin-bottom: 0;
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+/* ---------- 按钮：立体渐变 ---------- */
+html.era-2012 .btn {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid #8b6914;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  font-size: 13px;
+  font-family: var(--sans);
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+
+html.era-2012 .btn-light {
+  color: #2a1808;
+  background: linear-gradient(to bottom, #f7e7b0, #c9a227);
+  border-color: #8b6914;
+}
+
+html.era-2012 .btn-light:hover {
+  background: linear-gradient(to bottom, #fff8dc, #d4b84a);
+  color: #2a1808;
+}
+
+html.era-2012 .btn-dark {
+  color: #fff8dc;
+  background: linear-gradient(to bottom, #5a3d1a, #2a1808);
+}
+
+html.era-2012 .btn-dark:hover {
+  background: linear-gradient(to bottom, #8b6914, #5a3d1a);
+}
+
+html.era-2012 .btn-gold {
+  width: auto;
+  color: #2a1808;
+  background: linear-gradient(to bottom, #f7e7b0, #c9a227);
+  border: 1px solid #8b6914;
+}
+
+html.era-2012 .btn-gold:hover {
+  background: linear-gradient(to bottom, #fff8dc, #d4b84a);
+}
+
+html.era-2012 h1,
+html.era-2012 h2,
+html.era-2012 h3 {
+  font-family: "SimHei", "Microsoft YaHei", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #5a3d1a;
+}
+
+/* ---------- 内容区块：有边框的盒子 ---------- */
+html.era-2012 .story,
+html.era-2012 .rooms,
+html.era-2012 .moments,
+html.era-2012 .stay {
+  padding: 18px 20px;
+}
+
+html.era-2012 .story {
+  background: #fffdf6;
+  border-bottom: 1px dashed #c4b089;
+}
+
+html.era-2012 .story-grid {
+  display: block;
+  margin-bottom: 14px;
+}
+
+html.era-2012 .story-meta {
+  float: left;
+  width: 280px;
+  padding-right: 20px;
+}
+
+html.era-2012 .story-body {
+  margin-left: 300px;
+}
+
+html.era-2012 .story h2,
+html.era-2012 .dining h2,
+html.era-2012 .wellness h2,
+html.era-2012 .visit h2,
+html.era-2012 .stay h2,
+html.era-2012 .section-head h2 {
+  font-size: 20px;
+  border-left: 4px solid #c9a227;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+html.era-2012 .story-body blockquote {
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  border-left: 3px solid #8b6914;
+  background: #f4efe4;
+  font-family: var(--serif);
+  font-size: 13px;
+  color: #5a3d1a;
+}
+
+html.era-2012 .story-photo {
+  display: none;
+}
+
+html.era-2012 .section-head {
+  max-width: none;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #c9a227;
+}
+
+html.era-2012 .section-lead {
+  margin-top: 6px;
+  color: #555;
+}
+
+/* 客房：表格感卡片 */
+html.era-2012 .rooms {
+  background: #f4efe4;
+}
+
+html.era-2012 .room {
+  background: #fff;
+  border: 1px solid #c4b089;
+  margin-bottom: 12px;
+}
+
+html.era-2012 .room.featured {
+  display: block;
+  width: auto;
+  min-height: 0;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+html.era-2012 .room-row {
+  display: table;
+  width: 100%;
+  border-spacing: 12px 0;
+  margin-left: -12px;
+}
+
+html.era-2012 .room-row .room {
+  display: table-cell;
+  width: 50%;
+  vertical-align: top;
+}
+
+html.era-2012 .room-image {
+  float: left;
+  width: 120px;
+  min-height: 0;
+  margin: 10px 12px 10px 10px;
+  border: 1px solid #c4b089;
+  background: #eee;
+}
+
+html.era-2012 .room-image img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+}
+
+html.era-2012 .room.featured .room-image,
+html.era-2012 .room.featured .room-image img {
+  width: 140px;
+  height: 90px;
+}
+
+html.era-2012 .room:hover .room-image img {
+  transform: none;
+}
+
+html.era-2012 .room-info {
+  padding: 12px 14px;
+}
+
+html.era-2012 .room-info h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #8b6914;
+}
+
+html.era-2012 .room-info ul {
+  margin: 8px 0;
+  font-size: 12px;
+}
+
+html.era-2012 .room-foot {
+  padding-top: 8px;
+  border-top: 1px dashed #c4b089;
+  font-size: 12px;
+  color: #8b6914;
+  font-weight: 700;
+}
+
+html.era-2012 .room-foot a {
+  color: #5a3d1a;
+  text-decoration: underline;
+}
+
+/* 餐饮 / 温泉 / 抵达：纯文字，不放配图 */
+html.era-2012 .dining,
+html.era-2012 .wellness,
+html.era-2012 .visit {
+  display: block;
+  width: auto;
+  min-height: 0;
+  border-top: 1px solid #c4b089;
+  background: #fffdf6;
+}
+
+html.era-2012 .dining-visual,
+html.era-2012 .wellness-visual,
+html.era-2012 .visit-map {
+  display: none;
+}
+
+html.era-2012 .dining-copy,
+html.era-2012 .wellness-copy,
+html.era-2012 .visit-copy {
+  display: block;
+  width: auto;
+  padding: 20px 24px;
+}
+
+html.era-2012 .wellness {
+  background: #f4efe4;
+}
+
+html.era-2012 .hours {
+  margin-top: 12px;
+  border: 1px solid #c4b089;
+  background: #fff;
+}
+
+html.era-2012 .hours div {
+  display: table;
+  width: 100%;
+  grid-template-columns: none;
+  padding: 6px 10px;
+  border-top: 1px dotted #c4b089;
+}
+
+html.era-2012 .hours dt,
+html.era-2012 .hours dd {
+  display: table-cell;
+}
+
+html.era-2012 .hours dt {
+  width: 70px;
+  font-family: var(--sans);
+  font-weight: 700;
+  color: #8b6914;
+}
+
+html.era-2012 .plain-list {
+  margin: 10px 0;
+  border: 1px solid #c4b089;
+  background: #fff;
+}
+
+html.era-2012 .plain-list li {
+  padding: 6px 10px;
+  border-bottom: 1px dotted #c4b089;
+}
+
+/* 时节 */
+html.era-2012 .moments {
+  background: #3a2410;
+  color: #f7e7b0;
+}
+
+html.era-2012 .moments .section-head {
+  border-bottom-color: #c9a227;
+}
+
+html.era-2012 .moments h2 {
+  color: #f7e7b0;
+}
+
+html.era-2012 .moments .eyebrow {
+  color: #c9a227;
+}
+
+html.era-2012 .moment-grid {
+  display: table;
+  width: 100%;
+  border-spacing: 8px 0;
+}
+
+html.era-2012 .moment-grid article {
+  display: table-cell;
+  width: 25%;
+  vertical-align: top;
+  background: #2a1808;
+  border: 1px solid #8b6914;
+  padding: 8px 0;
+}
+
+html.era-2012 .moment-grid img {
+  display: none;
+}
+
+html.era-2012 .moment-grid article h3 {
+  margin: 4px 10px 4px;
+  color: #c9a227;
+  font-size: 15px;
+}
+
+html.era-2012 .moment-grid article p {
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+/* 预订 */
+html.era-2012 .stay {
+  display: table;
+  width: 100%;
+  gap: 0;
+  background: #f4efe4;
+  border-top: 3px double #8b6914;
+}
+
+html.era-2012 .stay-intro,
+html.era-2012 .stay-form {
+  display: table-cell;
+  vertical-align: top;
+}
+
+html.era-2012 .stay-intro {
+  width: 38%;
+  padding-right: 24px;
+}
+
+html.era-2012 address {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+html.era-2012 address a {
+  color: #5a3d1a;
+  border-bottom: 1px dashed #8b6914;
+}
+
+html.era-2012 .stay-form {
+  background: #fff;
+  border: 1px solid #c4b089;
+  padding: 16px;
+}
+
+html.era-2012 .stay-form label {
+  font-size: 12px;
+  letter-spacing: 0;
+  color: #5a3d1a;
+}
+
+html.era-2012 .stay-form input,
+html.era-2012 .stay-form select,
+html.era-2012 .stay-form textarea {
+  border: 1px solid #aaa;
+  background: #fff;
+  padding: 4px 6px;
+  font-size: 13px;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+html.era-2012 .form-row {
+  display: table;
+  width: 100%;
+}
+
+html.era-2012 .form-row label {
+  display: table-cell;
+  width: 50%;
+  padding-right: 8px;
+}
+
+html.era-2012 .form-status {
+  font-size: 12px;
+  color: #8b6914;
+}
+
+/* 页脚 */
+html.era-2012 .site-footer {
+  display: block;
+  background: #1a140c;
+  color: #d4c4a0;
+  padding: 14px 20px;
+  text-align: center;
+  border-top: 3px solid #c9a227;
+}
+
+html.era-2012 .footer-brand {
+  display: block;
+  margin-bottom: 6px;
+}
+
+html.era-2012 .footer-brand .logo-mark {
+  display: none;
+}
+
+html.era-2012 .footer-quote {
+  font-family: var(--serif);
+  text-align: center;
+  margin: 4px 0;
+}
+
+html.era-2012 .footer-copy {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+html.era-2012 .footer-copy::after {
+  content: "　利特酒店版权所有　浙ICP备12001888号";
+}
+
+html.era-2012 .era-morse {
+  display: none;
+  margin-top: 8px;
+  font-family: "Courier New", Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #6a5a38;
+  opacity: 0.7;
+}
+
+html.era-2012 .era-morse.is-on {
+  display: block;
+}
+
+@media (max-width: 980px) {
+  html.era-2012 .page-wrap {
+    width: auto;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  html.era-2012 .nav {
+    white-space: nowrap;
+    overflow-x: auto;
+    text-align: left;
+  }
+
+  html.era-2012 .story-meta,
+  html.era-2012 .story-body,
+  html.era-2012 .room.featured,
+  html.era-2012 .room-row,
+  html.era-2012 .room-row .room,
+  html.era-2012 .dining,
+  html.era-2012 .wellness,
+  html.era-2012 .visit,
+  html.era-2012 .dining-copy,
+  html.era-2012 .wellness-copy,
+  html.era-2012 .visit-copy,
+  html.era-2012 .stay,
+  html.era-2012 .stay-intro,
+  html.era-2012 .stay-form,
+  html.era-2012 .moment-grid,
+  html.era-2012 .moment-grid article,
+  html.era-2012 .form-row,
+  html.era-2012 .form-row label {
+    display: block;
+    float: none;
+    width: auto;
+    margin-left: 0;
+  }
+
+  html.era-2012 .hero {
+    height: auto;
+  }
+
+  html.era-2012 .hero-media {
+    float: none;
+    width: 160px;
+    height: 100px;
+    margin: 0 0 10px;
+  }
+
+  html.era-2012 .hero-media img {
+    height: 100px;
+  }
+
+  html.era-2012 .hero-copy {
+    padding: 0;
+  }
+
+  html.era-2012 .hero h1 {
+    font-size: 20px;
+  }
+
+  html.era-2012 .room-image,
+  html.era-2012 .room-image img,
+  html.era-2012 .room.featured .room-image,
+  html.era-2012 .room.featured .room-image img {
+    float: none;
+    width: 100px;
+    height: 70px;
+  }
+}

@@ -3,6 +3,19 @@ const toggle = document.getElementById("menuToggle");
 const nav = document.getElementById("nav");
 const form = document.getElementById("bookingForm");
 const status = document.getElementById("formStatus");
+const isEra2012 = document.documentElement.classList.contains("era-2012");
+
+if (isEra2012) {
+  const eraDate = document.getElementById("eraDate");
+  if (eraDate) {
+    const now = new Date();
+    const week = ["日", "一", "二", "三", "四", "五", "六"];
+    eraDate.textContent =
+      now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日　星期" + week[now.getDay()];
+  }
+  const copy = document.querySelector(".footer-copy");
+  if (copy) copy.textContent = "© 2012 利特酒店　欢迎您的光临";
+}
 
 const KEYS = ["story", "rooms", "dining", "wellness", "moments"];
 const DOC_PAGE = "doc.html";
@@ -12,8 +25,10 @@ const onScroll = () => {
   header.classList.toggle("scrolled", window.scrollY > 24);
 };
 
-onScroll();
-window.addEventListener("scroll", onScroll, { passive: true });
+if (!isEra2012) {
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
 
 toggle.addEventListener("click", () => {
   const open = header.classList.toggle("open");
@@ -138,6 +153,14 @@ form.checkin.addEventListener("change", () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  const guestName = form.elements["name"].value.trim();
+  const guestPhone = form.elements["phone"].value.replace(/\D/g, "");
+
+  if (isEra2012 && guestName === "张旭" && guestPhone === "10456") {
+    window.location.href = "black.html";
+    return;
+  }
+
   if (!form.reportValidity()) {
     status.textContent = "请完整填写姓名、电话与入住日期。";
     return;
@@ -148,8 +171,7 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  const guestName = form.elements["name"].value.trim();
-  if (guestName === "张旭") {
+  if (!isEra2012 && guestName === "张旭") {
     status.textContent = "身份已识别。正在进入内部系统……";
     setTimeout(() => {
       window.location.href = "docs.html";
@@ -157,8 +179,16 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  if (!puzzle.active) {
+  if (!isEra2012 && !puzzle.active) {
     activatePuzzle();
+  }
+
+  if (isEra2012) {
+    const morse = document.getElementById("eraMorse");
+    if (morse) {
+      morse.hidden = false;
+      morse.classList.add("is-on");
+    }
   }
 
   status.textContent = "已收到您的意向。管家将在 12 小时内与您确认房态。";
